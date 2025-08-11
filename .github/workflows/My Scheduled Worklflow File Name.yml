@@ -16,5 +16,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Print time
-      - run: date
-      - shell: pwsh
+        run: date
