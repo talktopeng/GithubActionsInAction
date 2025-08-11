@@ -1,0 +1,14 @@
+name: My Second Workflow
+run-name: 😎 This is the run-name for my second workflow
+on: 
+  push:
+    branches: 
+      main
+  workflow_dispatch:
+    
+jobs:
+  First-Job-In-Second-Workflow:
+    runs-on: windows-latest
+    steps:
+      - run: hostname
+    name: Show hostname of the VM
