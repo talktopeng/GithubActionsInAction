@@ -1,0 +1,39 @@
+name: Manually TriggeredWorkflow
+on:
+  workflow_dispatch:
+    inputs:
+        Homedrive:
+            description: 'The home drive for the application'
+            required: true
+            default: 'C:/'
+        version:
+            description: 'Version of the application'
+            required: true
+            default: '1.0.0'
+        logLevel:
+            description: 'Logging level for the application'
+            required: true
+            default: 'web'
+            type: choice
+            options:
+              - web
+              - desktop
+              - mobile
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up environment variables
+        run: |
+          echo "HOMEDRIVE=${{ github.event.inputs.Homedrive }}" >> $GITHUB_ENV
+          echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
+          echo "LOG_LEVEL=${{ github.event.inputs.logLevel }}" >> $GITHUB_ENV
+
+      - name: Display environment variables
+        run: |
+          echo "Home Drive: $HOMEDRIVE"
+          echo "Version: $VERSION"
+          echo "Log Level: $LOG_LEVEL"
