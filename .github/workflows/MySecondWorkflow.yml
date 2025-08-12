@@ -1,5 +1,5 @@
 name: My Second Workflow
-run-name: 😎 ${{ github.event.commits.message }}
+run-name: 😊😎 ${{ github.event.head_commit.message }}
 on: 
   push:
     branches: 
