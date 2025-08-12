@@ -1,0 +1,18 @@
+name: Reponse Workflow
+on:
+  push:
+  workflow_dispatch:
+jobs:
+    ResponseJob:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Respond to Push
+          run: echo "Response to the push event received. Workflow triggered successfully."
+        - name: ❤️ Show Smaily Face 😍
+          run: echo "Response to the push event received. Workflow triggered successfully."
+        - name: Checkout Repository
+          uses: actions/checkout@v4.3.0
+        - name: List Files in Repository
+          run: |
+            echo "The repository ${{ github.repository }} contains the following files:"
+            tree
