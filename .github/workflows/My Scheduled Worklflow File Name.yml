@@ -2,11 +2,11 @@ name: Scheduled Workflow Title Name
 on:
   schedule:
     # Runs at every 15th minute
-    - cron: '*/15 * * * *'
+    # - cron: '*/15 * * * *'
     # Runs every hour from 9am to 5pm
-    - cron: '0 9-17 * * *'
+    # - cron: '0 9-17 * * *'
     # Runs every Friday at midnight
-    - cron: '0 0 * * FRI'
+    # - cron: '0 0 * * FRI'
     # Runs every quarter (00:00 on day 1 every 3rd month)
     - cron: '0 0 1 */3 *'
 

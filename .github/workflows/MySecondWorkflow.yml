@@ -3,7 +3,7 @@ run-name: 😎 This is the run-name for my second workflow
 on: 
   push:
     branches: 
-      main
+      - main
   workflow_dispatch:
     
 jobs:
